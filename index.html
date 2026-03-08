@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maceió Canoe Club - Canoa Havaiana</title>
+    
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração da Paleta de Cores Personalizada -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F85726',
+                            yellow: '#FFDD22',
+                            dark: '#231E1F',
+                            light: '#FDFBF7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilos adicionais suaves */
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(rgba(35, 30, 31, 0.7), rgba(35, 30, 31, 0.7)), url('https://images.unsplash.com/photo-1544331575-b92205ecf6c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-md border-b-4 border-brand-orange">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo / Identidade -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <!-- Imagem da logo: substitua 'logo.png' pelo nome exato do seu arquivo -->
+                <img src="logo.png" alt="Logo Maceió Canoe Club" class="w-10 h-10 object-contain group-hover:opacity-80 transition-opacity">
+                <div>
+                    <h1 class="font-bold text-xl tracking-wider leading-none text-brand-orange">MACEIÓ</h1>
+                    <p class="text-xs tracking-widest text-brand-yellow font-semibold">CANOE CLUB</p>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-6 items-center font-medium">
+                <a href="#sobre" class="hover:text-brand-orange transition-colors">O Clube</a>
+                <a href="#atividades" class="hover:text-brand-orange transition-colors">Atividades</a>
+                <a href="#cronograma" class="hover:text-brand-orange transition-colors">Cronograma</a>
+                <a href="#loja" class="hover:text-brand-orange transition-colors">Produtos</a>
+            </nav>
+
+            <!-- Contato Rápido Desktop -->
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="https://instagram.com/" target="_blank" class="hover:text-brand-orange transition-colors" title="Instagram">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/5582999999999" target="_blank" class="bg-brand-orange text-white px-4 py-2 rounded-full font-bold hover:bg-brand-yellow hover:text-brand-dark transition-all flex items-center space-x-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>Agendar</span>
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-orange hover:text-brand-yellow focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (Oculto por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-gray-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="#sobre" class="block py-2 hover:text-brand-orange mobile-link">O Clube</a>
+            <a href="#atividades" class="block py-2 hover:text-brand-orange mobile-link">Atividades</a>
+            <a href="#cronograma" class="block py-2 hover:text-brand-orange mobile-link">Cronograma</a>
+            <a href="#loja" class="block py-2 hover:text-brand-orange mobile-link">Produtos</a>
+            <div class="pt-4 flex space-x-4 border-t border-gray-700">
+                <a href="https://instagram.com/" class="text-white hover:text-brand-orange"><i data-lucide="instagram"></i></a>
+                <a href="https://wa.me/5582999999999" class="text-white hover:text-brand-orange"><i data-lucide="phone"></i></a>
+                <a href="mailto:contato@maceiocanoe.club" class="text-white hover:text-brand-orange"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Destaque Inicial) -->
+    <section class="hero-bg text-white py-32 px-4 flex-grow flex items-center">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-shadow uppercase tracking-tight">
+                Remando Juntos nas<br><span class="text-brand-orange">Águas de Alagoas</span>
+            </h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-200">
+                Junte-se ao Maceió Canoe Club. Conecte-se com a natureza, desafie seus limites e faça parte da nossa família de canoa havaiana.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#atividades" class="bg-brand-orange text-white font-bold py-3 px-8 rounded-full hover:bg-brand-yellow hover:text-brand-dark transition-all shadow-lg text-lg">
+                    Conheça os Passeios
+                </a>
+                <a href="#cronograma" class="bg-transparent border-2 border-brand-yellow text-brand-yellow font-bold py-3 px-8 rounded-full hover:bg-brand-yellow hover:text-brand-dark transition-all shadow-lg text-lg">
+                    Ver Cronograma
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre / Atividades (Exposição) -->
+    <section id="atividades" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-brand-dark mb-4">Nossas Atividades</h3>
+                <div class="w-24 h-1 bg-brand-orange mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Seja você um iniciante buscando lazer ou um atleta em busca de performance, temos o formato ideal para você ir para a água.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <img src="https://images.unsplash.com/photo-1595079676339-153244d34b5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center -mt-12 relative z-10 border-4 border-white mb-4">
+                            <i data-lucide="sun" class="text-brand-dark"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-2">Passeios Turísticos</h4>
+                        <p class="text-gray-600 mb-4 text-sm">Aproveite as belezas naturais de Maceió de um ângulo único. Passeios guiados ideais para famílias e amigos, sem experiência prévia necessária.</p>
+                        <a href="https://wa.me/5582999999999" target="_blank" class="text-brand-orange font-bold hover:text-brand-dark inline-flex items-center transition-colors">
+                            Reservar agora <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <img src="https://images.unsplash.com/photo-1544331575-b92205ecf6c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center -mt-12 relative z-10 border-4 border-white mb-4">
+                            <i data-lucide="activity" class="text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-2">Treinos Regulares</h4>
+                        <p class="text-gray-600 mb-4 text-sm">Para quem deseja condicionamento físico, técnica e fazer parte de uma equipe. Turmas de iniciantes a avançados durante a semana.</p>
+                        <a href="#cronograma" class="text-brand-orange font-bold hover:text-brand-dark inline-flex items-center transition-colors">
+                            Ver horários <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-light rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <img src="https://images.unsplash.com/photo-1621360156942-835697d81a96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center -mt-12 relative z-10 border-4 border-white mb-4">
+                            <i data-lucide="calendar" class="text-brand-yellow"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-2">Eventos e Regatas</h4>
+                        <p class="text-gray-600 mb-4 text-sm">Participamos e organizamos eventos de travessia e competições. Acompanhe nosso calendário para os próximos desafios.</p>
+                        <a href="https://instagram.com/" target="_blank" class="text-brand-orange font-bold hover:text-brand-dark inline-flex items-center transition-colors">
+                            Acompanhar no Insta <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cronograma do Mês -->
+    <section id="cronograma" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-brand-dark mb-4">Cronograma do Mês</h3>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Confira os horários de treinos fixos e passeios programados.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-brand-dark text-white">
+                                <th class="py-4 px-6 font-semibold">Dia da Semana</th>
+                                <th class="py-4 px-6 font-semibold">Horário</th>
+                                <th class="py-4 px-6 font-semibold">Atividade</th>
+                                <th class="py-4 px-6 font-semibold">Nível</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-medium">Terça e Quinta</td>
+                                <td class="py-4 px-6">05:30 - 07:00</td>
+                                <td class="py-4 px-6">Treino Misto</td>
+                                <td class="py-4 px-6"><span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-bold">Iniciante / Intermediário</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors bg-gray-50/50">
+                                <td class="py-4 px-6 font-medium">Terça e Quinta</td>
+                                <td class="py-4 px-6">16:00 - 17:30</td>
+                                <td class="py-4 px-6">Treino Misto</td>
+                                <td class="py-4 px-6"><span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-bold">Todos</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-medium">Sábado</td>
+                                <td class="py-4 px-6">06:00 - 08:00</td>
+                                <td class="py-4 px-6">Treino Longo / Travessia</td>
+                                <td class="py-4 px-6"><span class="bg-orange-100 text-brand-orange text-xs px-2 py-1 rounded-full font-bold">Avançado</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors bg-brand-yellow/10">
+                                <td class="py-4 px-6 font-medium">Domingo</td>
+                                <td class="py-4 px-6">08:00 - 11:00</td>
+                                <td class="py-4 px-6 font-bold text-brand-orange">Passeios Turísticos</td>
+                                <td class="py-4 px-6"><span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-bold">Aberto ao Público</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-sm text-gray-500 italic">* Os horários podem sofrer alterações devido às condições climáticas e marés.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise / Produtos do Clube -->
+    <section id="loja" class="py-20 bg-brand-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4">Nossa Loja <span class="text-brand-yellow">(Merchandise)</span></h3>
+                    <div class="w-24 h-1 bg-brand-orange rounded"></div>
+                    <p class="mt-4 text-gray-400 max-w-lg">Vista as cores do Maceió Canoe Club. Adquira nossos produtos exclusivos diretamente na base do clube ou reserve pelo WhatsApp.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="https://wa.me/5582999999999?text=Olá, tenho interesse nos produtos do clube!" target="_blank" class="text-brand-yellow hover:text-white inline-flex items-center font-bold transition-colors">
+                        Encomendar via WhatsApp <i data-lucide="message-circle" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Produto 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700 flex items-center justify-center p-4">
+                         <!-- Placeholder image simulating a UV shirt -->
+                         <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="" class="w-full h-full object-cover rounded opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg mb-1">Blusa UV Laranja</h4>
+                        <p class="text-brand-orange font-bold">Consulte o valor</p>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700 flex items-center justify-center p-4">
+                         <img src="https://images.unsplash.com/photo-1606074280798-2dabb75ce10c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="" class="w-full h-full object-cover rounded opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg mb-1">Garrafa Térmica (Preta)</h4>
+                        <p class="text-brand-orange font-bold">Consulte o valor</p>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700 flex items-center justify-center p-4">
+                         <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="" class="w-full h-full object-cover rounded opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg mb-1">Boné Oficial</h4>
+                        <p class="text-brand-orange font-bold">Consulte o valor</p>
+                    </div>
+                </div>
+
+                <!-- Mais Produtos / CTA -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border-2 border-dashed border-gray-600 flex flex-col items-center justify-center p-8 text-center hover:border-brand-yellow transition-colors cursor-pointer" onclick="window.open('https://wa.me/5582999999999', '_blank')">
+                    <i data-lucide="shopping-bag" class="w-12 h-12 text-gray-400 mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">Mais itens na base</h4>
+                    <p class="text-sm text-gray-400">Temos viseiras, adesivos e mais. Fale conosco!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contato -->
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            
+            <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                <!-- Imagem da logo no rodapé -->
+                <img src="logo.png" alt="Logo Maceió Canoe Club" class="w-12 h-12 object-contain">
+                <div>
+                    <h2 class="font-bold text-xl tracking-wider leading-none text-brand-orange">MACEIÓ</h2>
+                    <p class="text-xs tracking-widest text-brand-yellow font-semibold">CANOE CLUB</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start mb-6 md:mb-0 space-y-2">
+                <h4 class="font-bold text-gray-300 mb-2 uppercase tracking-wide text-sm">Contatos</h4>
+                <a href="mailto:contato@maceiocanoe.club" class="text-gray-400 hover:text-brand-yellow flex items-center space-x-2 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>contato@maceiocanoe.club</span>
+                </a>
+                <a href="https://wa.me/5582999999999" class="text-gray-400 hover:text-brand-yellow flex items-center space-x-2 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>(82) 99999-9999</span>
+                </a>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="https://instagram.com/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-orange transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/5582999999999" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+            <p>&copy; 2026 Maceió Canoe Club. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Inicialização dos Ícones e Scripts -->
+    <script>
+        // Iniciar ícones Lucide
+        lucide.createIcons();
+
+        // Script para o Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar num link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
